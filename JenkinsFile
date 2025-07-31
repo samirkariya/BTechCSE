@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                git 'https://github.com/samirkariya/BTechCSE.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Compiling Java Code...'
+                bat 'javac Hello.java'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running Basic Test...'
+                bat 'java Hello | grep "Hello from Jenkins Pipeline!"'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying Application...'
+                echo 'Deployed Successfully'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline executed successfully.'
+        }
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
+}
