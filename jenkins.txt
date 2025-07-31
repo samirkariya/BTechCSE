@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                echo "Step: Checkout Code"
+                sh 'echo Simulating code checkout...'
+            }
+        }
+
+        stage('Build Project') {
+            steps {
+                echo "Step: Build Project"
+                sh 'echo Simulating build...'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                echo "Step: Run Tests"
+                sh 'echo Simulating test execution...'
+            }
+        }
+
+        stage('Code Analysis') {
+            steps {
+                echo "Step: Code Analysis"
+                sh 'echo Simulating code analysis...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Step: Deploy"
+                sh 'echo Simulating deployment...'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed.'
+        }
+        always {
+            echo 'Simulating cleanup...'
+            sh 'echo Cleaning workspace...'
+        }
+    }
+}
