@@ -4,14 +4,14 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 echo "Step: Checkout Code"
-                sh 'echo Simulating code checkout...'
+                
             }
         }
 
         stage('Build Project') {
             steps {
                 echo "Step: Build Project"
-                sh 'echo Simulating build...'
+                
             }
         }
 
