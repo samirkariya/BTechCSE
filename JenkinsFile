@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/samirkariya/BTechCSE.git'
+                git clone 'https://github.com/samirkariya/BTechCSE.git'
             }
         }
 
@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Compiling Java Code...'
                 bat 'dir'
-                bat 'type Hello.java'
+                
             }
         }
 
