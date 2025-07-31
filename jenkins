@@ -18,7 +18,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 echo "Step: Run Tests"
-                sh 'echo Simulating test execution...'
+                
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Step: Deploy"
-                sh 'echo Simulating deployment...'
+                
             }
         }
     }
@@ -46,7 +46,7 @@ pipeline {
         }
         always {
             echo 'Simulating cleanup...'
-            sh 'echo Cleaning workspace...'
+            
         }
     }
 }
